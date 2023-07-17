@@ -56,5 +56,4 @@ public enum ElementType {
 - (> 선언위치 구분; 지역 변수(local variable) : 메서드 내부 선언)
   - 클래스 변수 : 모든 객체 공통 속성 고정 (static)
   - (> 속성 구분; 인스턴스 변수(instance variable) : 개별 객체 속성 별개)
-- generic
-- parameter
+
