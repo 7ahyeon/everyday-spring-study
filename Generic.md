@@ -12,11 +12,11 @@
 
 |타입|설명|
 |:-:|:-:|
-| <T> |Type|
-| <E> |Element|
-| <K> |Key|
-| <V> |Value|
-| <N> |Number|
+|<T>|Type|
+|<E>|Element|
+|<K>|Key|
+|<V>|Value|
+|<N>|Number|
 
 - **타입 파라미터** : 참조 타입만 가능(원시 타입 불가(래퍼 클래스 가능)
 
