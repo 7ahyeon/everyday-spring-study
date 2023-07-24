@@ -44,6 +44,8 @@ public enum ElementType {
     TYPE_USE
 }
 
+# @Retention
+
 ```
 * * *
 - context : 문맥, 맥락, 환경
