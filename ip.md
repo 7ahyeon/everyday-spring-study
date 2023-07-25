@@ -1,0 +1,2 @@
+# ip
+- ipconfig /all
