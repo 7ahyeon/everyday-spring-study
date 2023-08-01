@@ -6,4 +6,4 @@
   
 # 추상적 요약 Abstractive Summarization
 - 기존 글과 달리 새로운 단어나 문장을 생성해서 요약글을 만드는 것
-- 
+
