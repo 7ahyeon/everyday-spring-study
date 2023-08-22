@@ -1,0 +1,12 @@
+# spring batch
+- 배치 프레임워크
+- 로깅/추적, 트랜잭션 관리, 작업 처리 통계, 작업 재시작, 건너뛰기, 리소스 관리 등
+- 대용량 레코드(데이터) 처리에 필수적인 재사용 가능한 기능 제공
+- 최적화 및 파티셔닝 기술을 통해 매우 높은 볼륨 및 고성능 배치 작업을 가능하게 함
+- 기능
+  - Transaction management
+  - Chunk based processing
+  - Declarative I/O
+  - Start/Stop/Restart
+  - Retry/Skip
+  - Web based administration interface 
