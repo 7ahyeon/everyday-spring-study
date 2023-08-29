@@ -5,13 +5,13 @@
   - DATE : """&TEXT(날짜, "형식(YYYY-MM-DD)")&"""
   - EXACT(A, B) : A=B면 TRUE, A!=B면 FALSE
   - IF(TRUE/FALSE, A, B) : TRUE면 A, FALSE면 B
-'''
+```
 =CONCATENATE("INSERT INTO table (seq, name, birth, gender) VALUES ("&A2&", """&B2&""", """&TEXT(C2, "YYYYMMDD")&""", """&IF(EXACT(D2, "여"), "1", "2")&""");")
-'''
+```
 
 # 큰 따옴표 / 작은 따옴표 in Oracle
 - 큰 따옴표 "" : 테이블명 혹은 컬럼명 표시
 - 작은 따옴표 '' : 문자열 표시
-'''
+```
 ="INSERT INTO table (seq, name, birth, gender) VALUES ("&A2&", '"&B2&"', '"&TEXT(C2, "YYYYMMDD")&"', '"&IF(EXACT(D2, "여"), "1", "2")&"');"
-'''
+```
