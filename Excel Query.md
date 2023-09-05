@@ -15,3 +15,6 @@
 ```
 ="INSERT INTO table (seq, name, birth, gender) VALUES ("&A2&", '"&B2&"', '"&TEXT(C2, "YYYYMMDD")&"', '"&IF(EXACT(D2, "여"), "1", "2")&"');"
 ```
+```
+="UPDATE table SET seq = "&A2&", name = '"&B2&"', birth = '"&TEXT(C2, "YYYYMMDD")&"', gender = '"&IF(EXACT(D2, "여"), "1", "2")&"', reg_date = DATE_FORMAT(CURDATE(), ""%Y%m%d"");"
+```
