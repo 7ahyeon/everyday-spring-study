@@ -55,7 +55,16 @@
 # Spring boot - Entity manager factory
 - 스프링 부트는 내부에서 엔티티 매니저 팩토리를 하나만 생성해서 관리함
 - @PersistenceContext / @Autowired 애노테이션을 사용해서 엔티티 매니저 사용함
+  - 기본적으로 빈은 단일 생성 및 공유 사용 : 동시성 문제 발생 가능성 있음
+  - 실제 엔티티 매니저와 연결하는 프록시(가짜) 엔티티 매니저 사용
+  - 필요시 데이터베이스 트랜잭션과 관련된 실제 엔티티 매니저 호출
+  - 실제 엔티티 매니저 : Spring Data JPA에서 생성 및 관리(개발자 직접 관리X)
 
-
+```java
+@PersistenceContext
+EntityManager em; // 프록시 엔티티 매니저 : 필요시 실제 엔티티 매니저 호출
+```
+# Persistence Context
+- 엔티티 매니저가 엔티티를 저장함
 
 - 출처. https://goldenrabbit.co.kr/product/springboot3java/)https://goldenrabbit.co.kr/product/springboot3java/
