@@ -71,7 +71,7 @@ EntityManager em; // 프록시 엔티티 매니저 : 필요시 실제 엔티티 
 - 영속성 컨텍스트 : JPA의 중요한 특징 중 하나
 - 엔티티 매니저가 엔티티를 저장하고 관리하는 가상의 공간
 - 스프링 부트 : 자바 코드 작성 -JPA-> 자동 쿼리 변경
-- 특징 : 데이터베이스의 접근을 최소화해 성능을 높일 수 있음
+- 특징 : **데이터베이스의 접근을 최소화해 성능을 높일 수 있음**
   - 1차 캐시
     - 영속성 컨텍스트 내부에 있는 첫 번째 캐시
     - 각 Thread의 1차 캐시는 별도로 동작하는 것을 전제로 함
@@ -88,6 +88,36 @@ EntityManager em; // 프록시 엔티티 매니저 : 필요시 실제 엔티티 
     - Lazy Loading
     - 쿼리로 요청한 데이터를 애플리케이션에 바로 로딩하는 것이 아니라 필요할 때 쿼리를 날려 데이터를 조회하는 것
     - <-> 즉시로딩 : 조회할 때 쿼리를 보내 연관된 모든 데이터를 가져옴
-  
+- **캐시를 하거나, 자주 쓰지 않게 하거나, 변화를 감지해서 미리 준비하거나!**
+
+# 엔티티의 4가지 상태
+- 비영속(transient) : 영속성 컨텍스트와 전혀 관계가 없음(엔티티 처음 생성시)
+- 관리(managed) : 엔티티 매니저가 관리함 : persist
+- 분리(detached) : 영속성 컨텍스트에서 관리하지 않음 : detach
+- 삭제(removed) : 영속성 컨텍스트와 데이터베이스에서 삭제됨 : remove
+
+- 엔티티의 상태는 특정 메서드를 호출해 변경 가능!
+- 필요에 따라 엔티티의 상태를 조절해 데이터를 올바르게 유지 및 관리 가능함
+
+```java
+public class EntityManagerTest {
+  @Autowired
+  EntityManager em;
+
+  public void example() {
+  // 비영속 transient : 영속성 컨텍스트와 전혀 관계가 없음(엔티티 처음 생성시)
+  Member member = new Member(1L, "홍길동");
+
+  // 관리 managed : 엔티티 매니저가 엔티티를 관리하는 상태
+  em.persist(member);
+
+  // 분리 detached : 엔티티를 영속성 컨텍스트에서 관리하지 않는 상태
+  em.detach(member);
+
+  // 삭제 removed : 영속성 컨텍스트와 데이터베이스에서 삭제됨
+  em.remove(member);
+  }
+}
+```
 
 - 출처. https://goldenrabbit.co.kr/product/springboot3java/)https://goldenrabbit.co.kr/product/springboot3java/
