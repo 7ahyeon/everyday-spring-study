@@ -8,3 +8,12 @@
 - java.security.keyFactory
 - java.security.spec.X509EncodedKeySpec
 - NoSuchAlgorithmException / InvalidKeySpecException
+- 대칭키 암호화 알고리즘
+  - 보안강도 안정성(권고하지않음)
+    - 80비트 미만 : DES
+    - 80비트 : 2TDEA
+    - 112비트 : 3TDEA
+  - 보안강도 안정성(권고)
+    - 128비트 : SEEB HIGHT ARIA-128 AES-128
+    - 192비트 : ARIA-192 AES-192
+    - 256비트 : ARIA-256 AES-256
